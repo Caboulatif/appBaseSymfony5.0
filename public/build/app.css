@@ -1,0 +1,365 @@
+body {
+    background-color: #fff; 
+    width: 100% ;
+    margin: 0 ;
+    padding: 0 ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color:#444;
+}
+
+.lienheader{
+    color:#fff;
+}
+
+.top-paneau{
+    width: 100%;
+    height: 2em;
+    background:#373938;  
+}
+.sous-top-paneau{ 
+    height: inherit;
+    width: 50%;
+    color: #fdfdfd;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position:absolute;
+    right: 0;
+}
+.sous-top-paneau i{
+    color:#07bad0;
+}
+.middle-paneau-haut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 3em;
+    background:#fff;
+}
+#under-middle-paneau-haut{
+    background:#14bbce;
+    width: 91%;
+    height: 2em;
+    margin-top: 1em;
+    -webkit-transform: perspective(300px) rotateX(30deg); 
+    -o-transform: perspective(300px) rotateX(30deg); 
+    -moz-transform: perspective(300px) rotateX(30deg); 
+    -webkit-transform-origin: 100% 50%; 
+    -moz-transform-origin: 100% 99%; 
+    -o-transform-origin: 100% 99%; 
+    transform-origin: 100% 99%; 
+
+    /*
+    vertical-align: middle;
+    background-image: url("images/correction.png");
+    overflow: hidden; 
+    */
+}
+
+.sousnavbar{
+    width: 100%;
+    height: 5em;
+    border: 1px solid #111;
+    position: absolute;
+    top:3.6em;
+    display: none;
+}
+#containerMenu #menubar:hover .sousnavbar{
+   display:block;
+   z-index: 2;
+   display: none;
+}
+/******************* Menu **********************/
+#menubar{
+    background: #18b8d2 !important;
+    margin: 0;
+    border-radius: 0;
+    z-index: 1;
+}
+#menubar ul {
+    -webkit-box-shadow: 0px 0px 0px 2px #18b8d2, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #fff, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 0px 0px 2px #18b8d2, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #fff, 5px 5px 15px 5px rgba(0,0,0,0);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    text-shadow: -4px 2px 2px #1C6EA4;
+}
+#menubar a {
+    color: #ffed5f;
+}
+#menubar a:hover {
+    background: inherit;
+    color: #ffed5f;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: underline
+}
+#containerMenu #menubar #navbarColor03 #nav-item-dropdown #dropdown-menu{
+    background: #9ab4fc;
+    background: #fff;
+    width: 883%;
+    position: absolute;
+    left: -50.5em;
+    top: 2.9em; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    -moz-transform: skew(-16deg, 0deg);
+    -webkit-transform: skew(-16deg, 0deg);
+    -o-transform: skew(-16deg, 0deg);
+    -ms-transform: skew(-16deg, 0deg);
+
+}
+#containerMenu #menubar #navbarColor03 #nav-item-dropdown #dropdown-menu a{
+    color: #666;
+    font-weight: bold;
+}
+#containerMenu #menubar #navbarColor03 #nav-item-dropdown #dropdown-menu a:hover{
+    background: #eeeeee;
+    text-shadow: -12px -3px 5px rgba(28,110,164,0.62);
+    text-shadow: 6px 2px 2px #2AB0B5;
+    -webkit-box-shadow: 0px 0px 0px 2px #18b8d2, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #fff, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 0px 0px 2px #18b8d2, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #fff, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#containerMenu #menubar #navbarColor03 #nav-item-dropdown:hover #dropdown-menu{
+display: block;
+}
+
+.nav-item-langue{
+    display: inline-block;
+    position: absolute;
+    right: 2em;
+}
+.nav-item-langue a{
+    display: inline-block;
+    margin-left: 1em;
+}
+
+/******************* Menu **********************/
+/***************LOGO ******************/
+.img-logo{
+    height:inherit;
+    width:3em;
+}
+
+/**************LOGO********************/
+/***********************Slider************************/
+#firstcontainerslider{
+    width: 100%;
+    height: 4em;;
+    border: 1px solid blue;
+}
+#sliderContainer{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    z-index: 1;
+}
+.container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.container-fluid {
+    border:1px solid red;
+    margin: 0;
+    padding: 0;
+}
+/*
+#myCarousel-inner{
+    width: 100%;
+    padding: 0px;
+    margin: 0;
+}
+.carousel {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 59.6em;
+    width: 96.4em;
+}
+.img-slider{
+    width:100%; 
+}
+#myCarousel > a.right.carousel-control{
+}
+*/
+/************************Fin Sliser **********************/
+/************************ bottom-slider ******************/
+#bottom-slider {
+    width: 100%;
+    background: #f4f4f4;
+    margin:0 auto;
+    padding: 2em;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+#bottom-liser p{
+    text-align: justify;
+}
+/************************Fin bottom-liser ******************/
+/*########################### section-acces-rapide ##################################*/
+#section-acces-rapide{
+    width:100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: row;
+}
+#nav-gauche{
+    width: 70%;
+    margin-left: 0;
+}
+#nav-gauche h3{
+    margin-left: 0 auto;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+#nav-gauche  p{
+    margin-left: 0 auto;
+    text-align: justify;
+    margin: 2em;
+}
+#nav-droite{
+    background: #373938;
+    width: 25%;
+    height: 30em;
+    border: 1px solid #111;
+    margin-left: 5%;
+    border-radius: 1em;
+}
+#nav-droite h3{
+    color: #f2e54b;
+}
+#nav-droite h4{
+    color: #fff;
+    font-style: bold;
+    margin-left: 10%;
+}
+#section-secteur-activite{
+    display: flex;
+    width: 100%;
+    height: 35em;
+    margin-top: 3em;
+}
+.sous-div-nos-domaines{
+    display: block;
+    width: 25%;
+    height: 30em;
+    border:1px solid #111;
+}
+.nos-domaines{
+    width: 100%;
+    height: 50%;
+    border: 1px solid #111;
+    text-align: center;
+    color: #f0e74a;
+}
+.nos-domaines h4{
+    margin-top: 25%;
+}
+#secteur-activite{
+    background: #18b8d2;
+}
+#secteur-activite h2{
+    margin-top: 40%;
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    line-height: 2em;
+
+}
+#transports{
+    background: #6ba6e0;
+}
+#logistiques{
+    background: #9a75d5;
+}
+#management{
+    background: #dd78be;
+}
+#conseils{
+    background: #5f66be;
+}
+#numeriques{
+    background: #f66bc4;
+}
+#services{
+    background: #a58ed6;
+}
+/*########################### FIN section-acces-rapide ##############################*/
+
+/*########################### FOOTER ##############################*/
+footer{
+    clear: both;
+    position:relative;
+    left:0;
+    bottom:0;  
+    padding-top:1em;
+    width: 100%;
+    background: #1e425c;
+    color: #fff;
+    -webkit-clip-path: polygon(93% 15%, 96% 0, 100% 0, 100% 99%, 0 100%, 0 14%);
+    clip-path: polygon(93% 15%, 96% 0, 100% 0, 100% 99%, 0 100%, 0 14%);
+    -webkit-clip-path: polygon(98% 0, 100% 0, 100% 100%, 0 100%, 0 7%, 96% 7%);
+    clip-path: polygon(98% 0, 100% 0, 100% 100%, 0 100%, 0 7%, 96% 7%);
+    }
+/************container-middle-footer***********/
+#container-middle-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4em;
+}
+/************fin container-middle-footer***********/
+/************middle-footer***********/
+.middle-footer{
+    width: 30%;
+    height: 10em;
+}
+.middle-footer h4,.middle-footer h6{
+    margin-left: 25%;
+    margin-top: 0;
+}
+.title-middle-footer{
+}
+/************middle-footer***********/
+/************Bottom-footer***********/
+
+#bottom-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 5rem;
+    background: #162f43;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top:1em; 
+    -webkit-clip-path: polygon(2% 19%, 3% 0, 100% 0, 100% 100%, 0 100%, 0 18%);
+    clip-path: polygon(2% 19%, 3% 0, 100% 0, 100% 100%, 0 100%, 0 18%);
+}
+#bottom-footer span{
+    font-style: italic;
+    opacity: .3;
+
+}
+
+/************Fin boottom-footer*****/
+/*########################### FIN FOOTER ##############################*/
+
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvY3NzL2FwcC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx1QkFBdUI7Q0FDMUI7QUFDRDtJQUNJLFdBQVc7Q0FDZCIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjsgXG59XG5oMXtcbiAgICBjb2xvcjojNDQ0O1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==*/

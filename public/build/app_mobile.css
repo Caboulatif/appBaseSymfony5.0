@@ -1,0 +1,57 @@
+@media screen and (max-width:980px){ 
+
+    .flex .child a span {
+        font-size: 10px;
+    }
+  
+  }
+  @media screen and (max-width:600px){
+    .top-paneau{
+        display: inline-block;
+        min-width: 492px;
+    }
+    .sous-top-paneau{
+        width: 100%;
+        min-width: 492px;
+        position:absolute;
+        left: 0;
+    }
+    .topspan{
+        margin-right: .2em;
+    }
+    .middle-paneau-haut{
+        min-width: 492px;
+    }
+    /*Memu*/
+    .navbar-brand{
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-bottom: 10px;
+    }
+    #containerMenu #menubar #navbarColor03 #nav-item-dropdown #dropdown-menu{
+        width: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    #menubar{
+        min-width: 492px;
+    }
+    /*Menu */
+    /****SLIDER , #myCarousel,.carousel*/
+    #ContainerSlider {
+        display: none;
+    }
+    .navbar-toggler:not(:disabled):not(.disabled) {
+        margin-left: 90%;
+    }
+  }
+  #secteur-activite h3{
+    margin-top: 25%;
+    font-size: 1.5em;
+}
+  
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvY3NzL2FwcC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx1QkFBdUI7Q0FDMUI7QUFDRDtJQUNJLFdBQVc7Q0FDZCIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjsgXG59XG5oMXtcbiAgICBjb2xvcjojNDQ0O1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ==*/

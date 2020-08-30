@@ -1,0 +1,145 @@
+include ../elements/_ui-tabs-classic
+include ../elements/_widget-form-search
+include ../mixins/_rd-navbar-submenu-simple
+
+//- RD Navbar Transparent
+//- skin - rd navbar skin (transparent, inverse, default)
+//- attrs - additional HTML attributes of rd navbar
+//- logo - logo markup (<img/> or text)
+//- links - nav links object
+mixin rd-navbar-corporate(skin, attrs, logo, activeLink, links, title)
+  // RD Navbar Transparent
+  .rd-navbar-wrap
+    nav&attributes(attrs).rd-navbar(class=skin, data-layout="rd-navbar-fixed", data-sm-layout="rd-navbar-fixed", data-sm-device-layout="rd-navbar-fixed", data-md-device-layout="rd-navbar-fixed", data-md-layout="rd-navbar-static", data-lg-device-layout="rd-navbar-static", data-lg-layout="rd-navbar-static", data-stick-up-offset="95", data-stick-up='true', data-sm-stick-up='true', data-md-stick-up='true', data-lg-stick-up='true')
+      .rd-navbar-inner
+        // RD Navbar Panel
+        .rd-navbar-panel
+          // RD Navbar Toggle
+          button.rd-navbar-toggle(data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap")
+            span
+          .rd-navbar-panel-title
+            h4= title
+          // RD Navbar Right Side Toggle
+          button.rd-navbar-right-side-toggle.veil-md(data-rd-navbar-toggle=".right-side")
+            span
+
+          .shell
+            .range.range-md-middle.range-lg-top
+              .cell-md-3.left-side
+                .clearfix.text-lg-left.text-center
+                  //Navbar Brand
+                  .rd-navbar-brand
+                    a(href="index.html")!=logo
+              .cell-md-9.text-md-right.right-side
+                ul.offset-lg-top-15.list-unstyled
+                  li.reveal-md-inline-block
+                    span.icon.icon-xxs.fa-envelope-o.text-middle.icon-primary
+                    a.inset-left-10.text-middle(href="mailto:#") info@demolink.org
+                  li.reveal-md-inline-block
+                    span.icon.icon-xxs.fa-clock-o.text-middle.icon-primary
+                    span.inset-left-10.text-middle Mon–Sat: 7:00–19:00
+                  li.reveal-md-inline-block
+                    span.icon.icon-xxs.fa-phone.text-middle.icon-primary
+                    a.inset-left-10.text-middle(href="tel:#") 1-800-1234-567
+        .rd-navbar-menu-wrap
+          .rd-navbar-nav-wrap
+            -var tabs = ""
+            -var megamenus = [{obj: cfg.nav.pages, columns: 4}]
+            -var type = 'simple'
+            -var megamenuColumns = 3
+
+            .rd-navbar-mobile-scroll
+              .rd-navbar-mobile-header-wrap
+                //Navbar Brand Mobile
+                .rd-navbar-mobile-brand
+                  a(href="index.html")!=logo
+                  a.rd-navbar-mobile-search-toggle.mdi(data-custom-toggle="rd-navbar-search-mobile" href="#")
+                    span
+                //RD Navbar Mobile Search
+                div.rd-navbar-search-mobile#rd-navbar-search-mobile
+                  form(action="search-results.html" method="GET").rd-navbar-search-form.search-form-icon-right.rd-search
+                    div.form-group
+                      label(for="rd-navbar-mobile-search-form-input" class="form-label") Search
+                      input(class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-mobile-search-form-input" type="text" name="s" autocomplete="off")
+
+              // RD Navbar Nav
+              ul.rd-navbar-nav
+                each link, title in links
+                  -type = 'simple'
+                    -
+                      var liClass = '';
+                      liClass += (activeLink.title == link.title) ? ' active' : ''
+                      liClass += ('Services' === link.title) ? ' tabs-nav' : ''
+                  li(class=liClass)
+                    a(href=link.href)= link.title
+                    each tab in tabs
+                      -
+                        if (JSON.stringify(tab.obj) === JSON.stringify(link)){
+                          type = 'tabs'
+                          if (tab.columns !== 'undefined') megamenuColumns = tab.columns
+                        }
+
+                    each megamenu in megamenus
+                      -
+                        if (JSON.stringify(megamenu.obj) === JSON.stringify(link)){
+                          type = 'megamenu'
+                          if (megamenu.columns !== 'undefined') megamenuColumns = megamenu.columns
+                        }
+                    case type
+                      when 'tabs'
+                        .rd-navbar-megamenu
+                          -var tabList = []
+                          each title in link.submenu
+                            -tabList.push(title.title)
+                          if tabList.length > 0
+                            +tabs-classic(tabList)
+                              each tab in link.submenu
+                                .row
+                                  -var columnLength = Object.keys(tab.submenu).length / megamenuColumns
+
+                                  - for (var i = 1; i <= megamenuColumns; i++)
+                                    -var j = 0
+                                      ul(class='col-lg-' + 12 / megamenuColumns)
+                                        each dropdown in tab.submenu
+                                          -j++
+                                          -if (j <= (i - 1) * columnLength) continue
+                                          -if (j > i*columnLength) break
+                                          li
+                                            a(href=dropdown.href)= dropdown.title
+                      when 'megamenu'
+                        .rd-navbar-megamenu
+                          .row.section-relative
+                            img.img-responsive.veil.reveal-lg-block(src="images/megamenu-img-01-270x370.jpg" width="270" height="370" alt="" style="position:absolute; bottom:-30px; left:5px")
+                            .col-lg-3.veil.reveal-lg-block
+                              div
+                                div
+                                  //- fix for safari in mac retina
+                                  p(style="min-height:300px")
+                            -var megamenuColumns = 3
+                            - var columnLength = Object.keys(link.submenu).length / megamenuColumns
+                            - for (var i = 1; i <= megamenuColumns; i++)
+                              - var j = 0
+                                ul(class='col-lg-3')
+                                  each dropdown in link.submenu
+                                    -j++
+                                    -if (j <= (i - 1) * columnLength) continue
+                                    -if (j > (i*columnLength)) break
+                                    li
+                                      h6
+                                        span.small=dropdown.title
+                                      ul.list-unstyled.offset-lg-top-25
+                                        each link in dropdown.submenu
+                                          li
+                                            a(href=link.href)= link.title
+
+                      default
+                        +rd-navbar-simple-submenu(link)
+          //RD Navbar Search
+          div.rd-navbar-search
+            a.rd-navbar-search-toggle.mdi(data-rd-navbar-toggle=".rd-navbar-search" href="#")
+              span
+            form(action="search-results.html" data-search-live="rd-search-results-live" method="GET").rd-navbar-search-form.search-form-icon-right.rd-search
+              div.form-group
+                label(for="rd-navbar-search-form-input" class="form-label") Search
+                input(class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+                #rd-search-results-live.rd-search-results-live
